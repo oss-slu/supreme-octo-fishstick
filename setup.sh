@@ -1,6 +1,16 @@
 #!/bin/bash
 
 # Detecting the user's operating system
+export POSTGRES_PASSWORD="dad_pass"
+export POSTGRES_DB="dad"
+export POSTGRES_USER="dad_user"
+export DB_HOST_FOR_BACKEND="localhost"
+export DB_PORT_FOR_BACKEND=5432
+export BACKEND_URL="localhost"
+export BACKEND_PORT=5000
+export FRONTEND_URL="localhost"
+export FRONTEND_PORT=3000
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux detected
     echo "Detected Linux OS" 

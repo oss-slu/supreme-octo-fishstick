@@ -1,0 +1,74 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres:16.2-bullseye # we are using specific bullseye image for minimal DB size
+    restart: always
+    container_name: dads_db
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    env_file:
+      - ./config.env
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+    volumes:
+      - ./pgdata:/var/lib/postgresql
+    ports:
+      - ${DB_PORT_FOR_BACKEND}:${DB_PORT_FOR_BACKEND}
+    expose:
+      - ${DB_PORT_FOR_BACKEND}
+    networks:
+      - backend_network
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - ./config.env
+    container_name: dads_backend
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    networks:
+      - frontend_network
+      - backend_network
+    depends_on:
+      - db
+    expose:
+      - ${BACKEND_PORT}
+
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - ./config.env
+    container_name: dads_frontend
+    ports:
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    networks:
+      - frontend_network
+      - backend_network
+    expose:
+      - ${FRONTEND_PORT}
+    depends_on:
+      - db
+      - backend
+
+# volumes:
+#   pgdata:
+#     driver: local
+#     driver_opts:
+#       type: 'none'
+#       o: 'bind'
+#       device: ./pgdata
+
+networks:
+  backend_network:
+  frontend_network:

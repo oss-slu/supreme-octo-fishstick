@@ -1,4 +1,5 @@
 import psycopg2
+import os
 
 # important do not store password when dealing with real database
 # might want to consider SQL injection down the line
@@ -11,12 +12,13 @@ class PostgresConnector:
     def __init__(self):
 
         self.connection = psycopg2.connect(
-                host="localhost",
-                dbname="dad",
-                user="dad_user",
-                password="dad_pass",
-                port = "5432")
-
+                host= os.environ.get("DB_HOST_FOR_BACKEND", "localhost"), #"localhost", #"db",
+                dbname= os.environ.get("POSTGRES_DB", "dad"), #"dad",
+                user= os.environ.get("POSTGRES_USER", "dad_user"), #"dad_user",
+                password= os.environ.get("POSTGRES_PASSWORD", "dad_pass"), #"dad_pass",
+                port = os.environ.get("DB_PORT_FOR_BACKEND", 5432), #"5432")
+        )
+    
     def getAllSystems(self):
         columns = '*'
         sql = "SELECT " + columns + " FROM functions_dim_1_NF"

@@ -26,24 +26,27 @@ https://www.beekeeperstudio.io/get
 
 Use Beekeeper Studio to connect to your PostgreSQL database using the connection parameters provided in the README file.
 
-Clone the Repository using "git clone https://github.com/oss-slu/dads.git"
-Navigate to the repository using "cd dads"
+Clone the Repository using <code>git clone https://github.com/oss-slu/dads.git</code>
+Navigate to the repository using <code>cd dads</code>
+
+In the <code>Backend</code> folder, you need to create a <code>database.ini</code> file with a section called <code>[postgresql_local]</code> that contains the connection information to connect to the database (remote or your own local copy).
 
 **Setup the Backend** - 
 
-Navigate to the backend directory using "cd Backend"
+Navigate to the Backend directory using <code>cd Backend</code>
 Install the necessary Python dependencies by running <code>pip install -r requirements.txt</code>
 
 **Setup the Frontend** - 
 
-Navigate to the frontend directory using "cd ../frontend"
+Navigate to the Frontend directory using <code>cd Frontend</code>
 Install necessary node modules by running <code>npm install</code>
+- Note: You may need to run <code>npm install --force</code> for the command to work properly.
 
 
 **Running the Application** - 
 
-Start the backend server by navigating to the backend folder ("cd Backend") and running <code>python server.py</code>  
+Start the backend server by navigating to the backend folder (<code>cd Backend</code>) and running <code>python server.py</code>  
 
-In a separate terminal, navigate to the frontend folder ("cd Frontend") and run <code>npm start</code>
+In a separate terminal, navigate to the frontend folder (<code>cd Frontend</code>) and run <code>npm start</code>
 
 The application should now be running on localhost with the frontend accessible via your web browser.

@@ -12,39 +12,24 @@ DADS is a web application designed for researchers to access information about a
 * Database: PostgreSQL
 
 ### Getting Started
-* Clone the repository from GitHub.
-* Install the necessary dependencies for React and Python using PIP and npm install.
-* Set up the PostgreSQL database.
-* Run the application using "python server.py" and "npm start" commands in backend and frontend directories respectively. 
+For detailed instruction on how to setup the application on your local machine, please refer to the [installation guide](Installation_Guide.md).
 
 ### Contributing
 We welcome contributions from the community. Please refer to the Contributing Guide for more information.
 https://github.com/oss-slu/dads/blob/main/Contributing_Guide.txt
 
-### Database Info
-Currently, the database connection settings are configured for local development using Beekeeper Studio with the following connection parameters:
-
-```python
-psycopg2.connect(
-    host='localhost',
-    dbname='dad',
-    user='dad_user',
-    password='dad_pass',
-    port='5432')
-```
-
 ### Key Files
 
 #### Backend - 
-postgres_connector.py - Contains methods to select systems and build SQL query text
-server.py - Contains Flask server initialization and API routes4
+- <code>postgres_connector.py</code>- Contains methods to select systems and build SQL query text
+- <code>server.py</code> - Contains Flask server initialization and API routes
 
 #### Frontend - 
-ExploreSystems.js - This page allows users to filter and search through the dynamical systems database using various properties.
-SystemDetails.js - Displays detailed information about a specific system when selected from the results in the Explore Systems page, uses component tables and data passed from postgres_connector
-AboutPage.js - Contains static information about the site
-newDataTable.js - Renders a dynamic table that displays systems based on the search and filter criteria, complete with pagination functionality.
-Topbar.js - Contains navigation logic for the site 
+- <code>ExploreSystems.js</code> - This page allows users to filter and search through the dynamical systems database using various properties.
+- <code>SystemDetails.js</code> - Displays detailed information about a specific system when selected from the results in the Explore Systems page, uses component tables and data passed from postgres_connector
+- <code>AboutPage.js</code> - Contains static information about the site
+- <code>newDataTable.js</code> - Renders a dynamic table that displays systems based on the search and filter criteria, complete with pagination functionality.
+- <code>Topbar.js</code> - Contains navigation logic for the site 
 
 ### License
 This project is licensed under the terms of the MIT license.

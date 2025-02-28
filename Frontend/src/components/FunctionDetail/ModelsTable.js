@@ -85,16 +85,16 @@ export default function ModelsTable({ data }) {
   return (
     <TableContainer className='table-component' component={Paper}>
       <h3>Models:</h3>
-      <h6>The different models of the function.</h6>
+      <h6>Several different representatives of this conjugacy class. May include: monic centered, reduced, and the original model found in the literature.</h6>
       <Table aria-label='models table'>
         <TableHead>
           <TableRow>
-            <TableCell><b>Name</b><HelpBox description="Family" title="Name" /></TableCell>
-            <TableCell><b>Polynomials</b><HelpBox description="Family" title="Polynomials" /></TableCell>
-            <TableCell><b>Resultant</b><HelpBox description="Family" title="Resultant" /></TableCell>
-            <TableCell><b>Primes of Bad Reduction</b><HelpBox description="Family" title="Primes of Bad Reduction" /></TableCell>
-            <TableCell><b>Conjugation from Standard</b><HelpBox description="Family" title="Cojugation from Standard" /></TableCell>
-            <TableCell><b>Field of Definition</b><HelpBox description="Family" title="Field of Definition" /></TableCell>
+            <TableCell><b>Name</b><HelpBox description="Name of the representative model" title="Name" /></TableCell>
+            <TableCell><b>Polynomials</b><HelpBox description="The defining polynomials of the representative model" title="Polynomials" /></TableCell>
+            <TableCell><b>Resultant</b><HelpBox description="The resultant of the defining polynomials of the representative model" title="Resultant" /></TableCell>
+            <TableCell><b>Primes of Bad Reduction</b><HelpBox description="The primes when the representative model has bad reduction, i.e., the primes dividing the resultant" title="Primes of Bad Reduction" /></TableCell>
+            <TableCell><b>Conjugation from Standard</b></TableCell>
+            <TableCell><b>Field of Definition</b><HelpBox description="The smallest field containing all coefficients of this representative model" title="Field of Definition" /></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

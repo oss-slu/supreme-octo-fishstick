@@ -35,27 +35,27 @@ export default function CriticalPointPortraitTable({ data }) {
     return (
       <TableContainer className='table-component' component={Paper}>
         <h3>Critical Point Portrait</h3>
-        <h6>The critical points of the portrait.</h6>
+        <h6>The DiGraph object representing the critical point forward orbits.</h6>
         <Table aria-label="simple table">
           <TableBody>
             <TableRow>
               <TableCell component="th" scope="row">
                 <b>Cardinality</b>
-                <HelpBox description="The cardinality shows how many elements are there." title="Cardinality" />
+                <HelpBox description="The number of vertices in the DiGraph" title="Cardinality" />
               </TableCell>
               <TableCell align="right">{formatData("cardinality")}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell component="th" scope="row">
                 <b>Size of Post Critical Set</b>
-                <HelpBox description="Shows how many elements are in the post critical set." title="Size of Post Critical Set" />
+                <HelpBox description="The number of points which are in the forward orbits of the critical points." title="Size of Post Critical Set" />
               </TableCell>
               <TableCell align="right">{formatData("positive_in_degree")}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell component="th" scope="row">
                 <b>As Directed Graph</b>
-                <HelpBox description="Shows the data as a graph." title="As Directed Graph" />
+                <HelpBox description="A DiGraph object in SageMath representing the portrait." title="As Directed Graph" />
               </TableCell>
               <TableCell align="right">
                   <Copy edges={formatData("edges")} type={2} />
@@ -64,7 +64,7 @@ export default function CriticalPointPortraitTable({ data }) {
             <TableRow>
               <TableCell component="th" scope="row">
                 <b>Adjacency Matrix</b>
-                <HelpBox description="Generates a matrix based on the given data." title="Adjancency Matrix" />
+                <HelpBox description="An adjacency matrix representing the critical point portrait DiGraph." title="Adjancency Matrix" />
               </TableCell>
               <TableCell align="right">
                   <Copy edges={formatData("edges")} type={1} />
@@ -76,14 +76,14 @@ export default function CriticalPointPortraitTable({ data }) {
             <TableRow>
               <TableCell component="th" scope="row">
                 <b>Cycle Lengths</b>
-                <HelpBox description="Shows how many times you can go around in a cycle." title="Cycle Lengths" />
+                <HelpBox description="The sizes of the distinct periodic components of the critical point portrait" title="Cycle Lengths" />
               </TableCell>
               <TableCell align="right">{formatData("periodic_cycles")}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell component="th" scope="row">
                 <b>Component Sizes</b>
-                <HelpBox description="The size of the matrix idk." title="Component Sizes" />
+                <HelpBox description="The sizes of the distinct preperiodic components of the critical point portrait." title="Component Sizes" />
               </TableCell>
               <TableCell align="right">{formatData("preperiodic_components")}</TableCell>
             </TableRow>

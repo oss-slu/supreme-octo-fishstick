@@ -54,16 +54,16 @@ export default function InfoTable({ data }) {
   return (
     <TableContainer className='table-component' component={Paper}>
       <h3>Function Details</h3>
-      <h6>The details of the function.</h6>
+      <h6>Basic data identifying this conjugacy class of dynamical systems.</h6>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell><b>Label</b><HelpBox description="Label" title="Label" /></TableCell>
-            <TableCell align="right"><b>Domain</b><HelpBox description="Domain" title="Domain" /></TableCell>
-            <TableCell align="right"><b>Standard Model</b><HelpBox description="Standard Model" title="Standard Model" /></TableCell>
-            <TableCell align="right"><b>Degree</b><HelpBox description="Degree" title="Degree" /></TableCell>
-            <TableCell align="right"><b>Field of Definition</b><HelpBox description="Field of Definition" title="Field of Definition" /></TableCell>
-            <TableCell align="right"><b>Family</b><HelpBox description="Family" title="Family" /></TableCell>
+            <TableCell><b>Label</b><HelpBox description="A unique identifier of the form N.S1.S2.M where N is the dimension of the domain, S1 is a hash of the sigma invariants of the fixed points, S2 is a hash of the sigma invariants of the points of period 2, and M is an ordinal to ensure uniqueness. For Lattes maps, the label is N.(LMFDB label).degree.M" title="Label" /></TableCell>
+            <TableCell align="right"><b>Domain</b><HelpBox description="The ambient domain of the map; a project space" title="Domain" /></TableCell>
+            <TableCell align="right"><b>Standard Model</b><HelpBox description="The typical representative polynomials of this conjugacy class." title="Standard Model" /></TableCell>
+            <TableCell align="right"><b>Degree</b><HelpBox description="Degree of the homogeneous polynomials of a representative of this map." title="Degree" /></TableCell>
+            <TableCell align="right"><b>Field of Definition</b><HelpBox description="The smallest field containing all coefficients of the standard representative polynomials." title="Field of Definition" /></TableCell>
+            <TableCell align="right"><b>Family</b><HelpBox description="Identifier for families of maps this conjugacy class belongs to (e.g. degree 2 polynomials)." title="Family" /></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

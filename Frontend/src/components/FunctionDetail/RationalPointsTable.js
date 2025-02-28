@@ -27,34 +27,34 @@ export default function RationalPointsTable({ data }) {
 		<>
 			<TableContainer className='table-component' component={Paper}>
 				<h3>Rational Preperiodic Points</h3>
-				<h6>The preperiodic points of the function.</h6>
+				<h6>Information on the rational preperiodic points over different fields.</h6>
 				<Table aria-label="simple table">
 					<TableBody>
 						<TableRow>
-							<TableCell component="th" scope="row"><b>Cardinality</b><HelpBox description="Cardinality" title="Cardinality" /></TableCell>
+							<TableCell component="th" scope="row"><b>Cardinality</b><HelpBox description="The number of rational preperiodic points." title="Cardinality" /></TableCell>
 							<TableCell align="right">{data.cardinality}</TableCell>
 						</TableRow>
 						<TableRow>
-							<TableCell component="th" scope="row"><b>Field Label</b><HelpBox description="Family" title="Field Label" /></TableCell>
+							<TableCell component="th" scope="row"><b>Field Label</b><HelpBox description="The field of definition of the points considered." title="Field Label" /></TableCell>
 							<TableCell align="right">{data.base_field_label}</TableCell>
 						</TableRow>
 						<TableRow>
-							<TableCell component="th" scope="row"><b>Preperiodic Components</b><HelpBox description="Family" title="Preperiodic Components" /></TableCell>
+							<TableCell component="th" scope="row"><b>Preperiodic Components</b><HelpBox description="The number of preperiodic components in the graph whose vertices are the preperiodic points and whose edges connect x to f(x)." title="Preperiodic Components" /></TableCell>
 							<TableCell align="right">{formatData('preperiodic_components')}</TableCell>
 						</TableRow>
 						<TableRow>
-							<TableCell component="th" scope="row"><b>Rational Preperiodic Points</b><HelpBox description="Family" title="Rational Preperiodic Points" /></TableCell>
+							<TableCell component="th" scope="row"><b>Rational Preperiodic Points</b><HelpBox description="A single preperiodic point in each of the preperiodic components." title="Rational Preperiodic Points" /></TableCell>
 							<TableCell align="right">{formatData('rational_periodic_points')}</TableCell>
 						</TableRow>
 						<TableRow>
-							<TableCell component="th" scope="row"><b>As Directed Graph</b><HelpBox description="As Directed Graph" title="As Directed Graph" /></TableCell>
+							<TableCell component="th" scope="row"><b>As Directed Graph</b><HelpBox description="The DiGraph object of rational preperiodic points as created by SageMath." title="As Directed Graph" /></TableCell>
 							<TableCell align="right">
 								<Copy edges={formatData("edges")} type={2} />
 							</TableCell>
 								
 						</TableRow>
 						<TableRow>
-							<TableCell component="th" scope="row"><b>Adjacency Matrix</b><HelpBox description="Family" title="Adjancency Matrix" /></TableCell>
+							<TableCell component="th" scope="row"><b>Adjacency Matrix</b><HelpBox description="An adjacency matric representing the preperiodic point DiGraph." title="Adjancency Matrix" /></TableCell>
 							<TableCell align="right">
 								<Copy edges={formatData("edges")} type={1} />
 								<br>
